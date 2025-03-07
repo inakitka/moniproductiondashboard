@@ -8,7 +8,7 @@ from google.oauth2 import service_account
 from googleapiclient.discovery import build
 
 # ---------------------------
-# Настройка страницы
+# Налаштування сторінки
 # ---------------------------
 st.set_page_config(
     page_title="Виробнича звітність",
@@ -17,7 +17,7 @@ st.set_page_config(
 )
 
 # ---------------------------
-# Настройка подключения к Google Sheets
+# Налаштування підключення до Google Sheets
 # ---------------------------
 SHEET_ID = "1cbQtfwOR32_J7sIGuZnqmEINKrc1hqcAwAZVmOADPMA"
 SCOPES = ["https://www.googleapis.com/auth/spreadsheets.readonly"]
@@ -28,11 +28,11 @@ credentials = service_account.Credentials.from_service_account_info(
 service = build("sheets", "v4", credentials=credentials)
 
 # ---------------------------
-# Функция для поиска колонки с процентами ошибок
+# Функція для пошуку колонки з відсотками помилок
 # ---------------------------
 def find_percentage_column(columns, target_type="втрат"):
     """
-    Ищет колонку с именем "Відсоток втрат" или "Відсоток браку" (игнорируя пробелы и регистр).
+    Шукає колонку з назвою "Відсоток втрат" або "Відсоток браку" (ігноруючи пробіли та регістр).
     """
     target_map = {
         "втрат": ["відсотоквтрат", "втрат", "відсотоквтрат%", "втрат%"],
@@ -82,7 +82,7 @@ def load_data(sheet_name):
         
         # Применяем переименование колонок, чтобы унифицировать имена
         column_mapping = {
-            "Тип оборудования": "Тип обладнання",
+            "Тип обладнання": "Тип обладнання",
             "Тип продукта": "Тип продукту",
             "Номер заказа": "Номер замовлення",
             "Время на операцию": "Час на операцію",
