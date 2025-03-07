@@ -1,3 +1,5 @@
+# moniproductiondashboard
+
 # Cosmetic Dashboard
 
 Дашборд для отображения производственной отчетности косметической компании. Приложение разработано с использованием Streamlit и получает данные из Google Sheets.
