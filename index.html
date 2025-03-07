@@ -2,9 +2,55 @@
 <html>
 <head>
     <title>Cosmetic Dashboard</title>
-    <meta http-equiv="refresh" content="0; url=https://share.streamlit.io/inakitka/moniproductiondashboard/main/app.py" />
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background-color: #f5f5f5;
+        }
+        .container {
+            max-width: 800px;
+            padding: 30px;
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+        h1 {
+            color: #333;
+        }
+        p {
+            color: #666;
+            line-height: 1.6;
+        }
+        .btn {
+            display: inline-block;
+            background-color: #4CAF50;
+            color: white;
+            padding: 12px 24px;
+            text-decoration: none;
+            border-radius: 4px;
+            font-weight: bold;
+            margin-top: 20px;
+            transition: background-color 0.3s;
+        }
+        .btn:hover {
+            background-color: #45a049;
+        }
+    </style>
 </head>
 <body>
-    <p>Перенаправление на Streamlit-приложение...</p>
+    <div class="container">
+        <h1>Cosmetic Dashboard</h1>
+        <p>Дашборд для отображения производственной отчетности косметической компании.</p>
+        <p>Это приложение разработано с использованием Streamlit и получает данные из Google Sheets.</p>
+        <p>Для запуска приложения локально, следуйте инструкциям в README.md.</p>
+        <a href="https://github.com/inakitka/moniproductiondashboard" class="btn">Перейти к репозиторию</a>
+    </div>
 </body>
 </html> 
