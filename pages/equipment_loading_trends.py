@@ -8,7 +8,7 @@ from google.oauth2 import service_account
 from googleapiclient.discovery import build
 
 # ---------------------------
-# Настройка подключения к Google Sheets
+# Налаштування підключення до Google Sheets
 # ---------------------------
 SHEET_ID = "1cbQtfwOR32_J7sIGuZnqmEINKrc1hqcAwAZVmOADPMA"
 SCOPES = ["https://www.googleapis.com/auth/spreadsheets.readonly"]
@@ -19,7 +19,7 @@ credentials = service_account.Credentials.from_service_account_info(
 service = build("sheets", "v4", credentials=credentials)
 
 # ---------------------------
-# Функции для загрузки данных из Google Sheets
+# Функції для завантаження даних з Google Sheets
 # ---------------------------
 @st.cache_data
 def load_data(sheet_name):
@@ -37,7 +37,7 @@ def load_data(sheet_name):
         
         # Применяем переименование колонок, чтобы унифицировать имена
         column_mapping = {
-            "Тип оборудования": "Тип обладнання",
+            "Тип обладнання": "Тип обладнання",
             "Тип продукта": "Тип продукту",
             "Номер заказа": "Номер замовлення",
             "Время на операцию": "Час на операцію",
@@ -84,9 +84,10 @@ def load_data(sheet_name):
         return pd.DataFrame()
 
 # ---------------------------
-# Функция для подсчёта рабочих дней (понедельник-пятница)
+# Функція для підрахунку робочих днів
 # ---------------------------
 def count_working_days(start, end):
+    """Підраховує кількість робочих днів між двома датами (включно)."""
     num = 0
     current = start
     while current <= end:
